@@ -14,6 +14,8 @@ gem 'turbolinks'
 gem 'bootstrap-generators', '~> 3.1.0'
 gem 'bootstrap-sass', '~> 3.1.0'
 gem 'haml-rails', '~> 0.5.3'
+gem 'simple_form', '3.0.1'
+gem 'kaminari'
 
 group :development do
   gem 'guard-rails', '~> 0.5.0'
@@ -23,6 +25,8 @@ group :development do
   gem 'quiet_assets', '~> 1.0.2'
   gem 'better_errors', '~> 1.1.0'
   gem 'rb-fsevent', '~> 0.9.4' if `uname` =~ /Darwin/
+  gem 'simple_form', '3.0.1'
+  gem 'kaminari'
 end
 
 group :development, :test do
@@ -34,4 +38,6 @@ group :development, :test do
   gem 'rspec-its', '~> 1.0.0'
   gem 'pry', '~> 0.9.12.6'
   gem 'pry-debugger', '~> 0.2.2'
+  gem 'simple_form', '3.0.1'
+  gem 'kaminari'
 end

@@ -1,0 +1,53 @@
+= form_for @event, :html => { :class => "form-horizontal" } do |f|
+  -if @event.errors.any?
+    .alert.alert-danger.alert-dismissable
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+      %h4= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
+
+      %ul
+        - @event.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :name, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :name, :class => 'form-control'
+  .form-group
+    = f.label :start_date, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :start_date, :class => 'form-control'
+  .form-group
+    = f.label :description, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :description, :class => 'form-control'
+  .form-group
+    = f.label :invite_starts, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.datetime_select :invite_starts, :class => 'form-control'
+  .form-group
+    = f.label :invite_ends, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.datetime_select :invite_ends, :class => 'form-control'
+  .form-group
+    = f.label :min_participants, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :min_participants, :class => 'form-control'
+  .form-group
+    = f.label :max_participants, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :max_participants, :class => 'form-control'
+  .form-group
+    = f.label :time_limit, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :time_limit, :class => 'form-control'
+  .form-group
+    = f.label :take_part, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.check_box :take_part, :class => 'form-control'
+  .form-group
+    = f.label :show_list, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.check_box :show_list, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => 'btn btn-primary'
